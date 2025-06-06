@@ -28,9 +28,9 @@ const About = () => {
           Sobre nosotros
         </h2>
         <div className="text-[12pt] font-normal leading-[1.56] mb-8 max-w-2xl w-full">
-          {paragraphs.map((text, idx) => (
+          {paragraphs.map((text, i) => (
             <p
-              
+              key={i}
               className="mb-4"
             >
               <span>{text}</span>
