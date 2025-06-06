@@ -22,7 +22,7 @@ export default function ProductsSection() {
   ];
 
   return (
-    <div className="min-h-screen bg-stormbored px-4 py-8 relative text-egg">
+    <div className="min-h-screen bg-stormbored px-4 py-8 relative text-egg overflow-hidden">
       <div className="md:hidden space-y-8">
         {sections.map((section, index) => (
           <motion.div
