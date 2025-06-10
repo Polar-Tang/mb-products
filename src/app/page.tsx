@@ -1,4 +1,3 @@
-import Navigation from "@/components/navigation"
 import HeroBanner from "@/components/hero-banner"
 import FeaturedSection from "@/components/featured-section"
 import MapsSection from "@/components/maps-section"

@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import whatsappLink from '@/lib/wpLink'
+import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
 
@@ -47,13 +48,12 @@ export default function Navigation() {
   }, [lastScrollPosition])
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-2 translate-y-0 text-base transition-colors duration-200 ${
-      isVisible ? 'bg-transparent text-white' : 'bg-white text-black shadow-md'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-2 translate-y-0 text-base transition-colors duration-200 ${isVisible ? 'bg-transparent text-white' : 'bg-white text-black shadow-md'
+        }`}
     >
       {useIsMobile()
-      ? <MobileContent />
-      : <DeskstopContent />}
+        ? <MobileContent />
+        : <DeskstopContent />}
     </nav>
   )
 }
@@ -62,40 +62,74 @@ export default function Navigation() {
 
 
 const DeskstopContent = () => {
+  const pathname = usePathname()
+  const isActive = (href: string) => {
+    return pathname === href
+  }
   return (
     <>
-
       <div className="text-sm opacity-75"></div>
 
       <div className="flex items-center space-x-2 pr-0">
-        <Link href="/" className=" font-semibold transition-colors">
+        <Link
+          href="/"
+          className={
+            isActive('/')
+              ? 'font-bold transition-colors'
+              : 'hover:align-middle text-base font-normal'
+          }
+        >
           Inicio
         </Link>
-
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="none"
-              className="hover: align-middle text-base font-normal"
+
             >
-              Productos
+              <p className={
+                isActive('/productos')
+                  ? 'font-bold transition-colors text-base font-normal'
+                  : 'hover:align-middle text-base font-normal'
+              }>
+                Productos
+
+              </p>
               <ChevronDown className="-ml-1 w-12 tracking-normal" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white/95 backdrop-blur-sm pl-8 pr-16">
             <DropdownMenuItem>
-              <Link href="/productos" className="hover:cursor-pointer hover:text-black text-gray-700">Objetos</Link>
+              <Link
+                href="/productos"
+                className='hover:align-middle text-base font-normal'
+              >
+                Objetos
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/productos/objetos" className="hover:cursor-pointer hover:text-black text-gray-700">Trabajos</Link>
+              <Link
+                href="/productos/objetos"
+                className='hover:align-middle text-base font-normal'
+              >
+                Trabajos
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/productos/decoracion" className="hover:cursor-pointer hover:text-black text-gray-700">Muelbes</Link>
+              <Link
+                href="/productos/decoracion"
+                className='hover:align-middle text-base font-normal'
+              >
+                Muelbes
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Link href={whatsappLink} className="  transition-colors">
+        <Link
+          href={whatsappLink}
+          className='hover:align-middle text-base font-normal'
+        >
           Contacto
         </Link>
       </div>

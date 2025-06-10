@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion } from "motion/react"
+import Image from 'next/image';
 
 export default function ProductsSection() {
   const sections = [
@@ -35,7 +36,7 @@ export default function ProductsSection() {
               {section.title}
             </h2>
             <div className="relative mb-4">
-              <img
+              <Image
                 src={section.image}
                 alt={section.title}
                 className="w-full h-64 object-cover rounded-lg"
@@ -64,7 +65,7 @@ export default function ProductsSection() {
               {section.title}
             </h2>
             <div className="relative mb-6">
-              <img
+              <Image
                 src={section.image}
                 alt={section.title}
                 className="w-full h-80 object-cover rounded-lg"
