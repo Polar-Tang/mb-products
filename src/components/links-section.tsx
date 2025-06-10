@@ -7,8 +7,8 @@ import Link from 'next/link'
 const LinkSection = () => {
   return (
     <div className="w-full flex">
-        <div className="grid grid-rows-3 md:grid-cols-3 w-full pl-[48px] pr-[48px] pt-12 ">
-            <div className="flex justify-center items-center h-[48px]  mb-12 md:mb-0">
+        <div className="grid grid-cols-3 w-full pl-[48px] pr-[48px] pt-12 pb-8 ">
+            <div className="flex justify-center items-center h-[48px]  mb-0">
                 <Link href="https://youtube.com/@MB.mueblesyobjetos" target="_blank" rel="noopener noreferrer">
                     <Image
                         width={44}
@@ -19,7 +19,7 @@ const LinkSection = () => {
                     />
                 </Link>
             </div>
-            <div className="flex justify-center items-center h-[48px] mb-12 md:mb-0">
+            <div className="flex justify-center items-center h-[48px] mb-0">
                 <Link href="https://www.google.com/url?q=https%3A%2F%2Fwww.instagram.com%2Fmb.mueblesyobjetos%2F&sa=D&sntz=1&usg=AOvVaw2pOuCCieNLqulJRN2AALvh" target="_blank" rel="noopener noreferrer">
                     <span
                         style={{
@@ -40,7 +40,7 @@ const LinkSection = () => {
                     </span>
                 </Link>
             </div>
-            <div className="flex justify-center items-center h-[48px]  mb-12 md:mb-0">
+            <div className="flex justify-center items-center h-[48px]  mb-0">
                 <Image
                     width={44}
                     height={44}

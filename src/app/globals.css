@@ -43,6 +43,7 @@
   --color-mustard: rgb(249, 203, 156);
   --color-tangerine: #f9cb9c;
   --color-diablo: #ff0000;
+  --color-stormy: rgba(33,33,33,1);
   --color-stormbored: rgba(120,113,113,1);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

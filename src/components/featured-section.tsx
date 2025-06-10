@@ -3,7 +3,7 @@ import { ProductCarousel } from "@/components/product-carousel"
 export default function FeaturedSection() {
   return (
     <section className="w-full relative p-px">
-      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_2fr]  md:mt-4  md:px-2 lg:px-4 w-full relative">
+      <div className="grid grid-cols-1 md:grid-cols-[1.4fr_2fr] md:mt-4  md:px-2 lg:px-26 w-full relative">
         <ProductCarousel /> 
         <About /> 
       </div>
@@ -21,7 +21,7 @@ const About = () => {
 
     return (
       <div
-        className="flex flex-col justify-center p-8 mt-[36px] md:mt-0 w-full relative"
+        className="flex flex-col justify-center pl-8 mt-[36px] md:mt-0 w-full relative"
         id="about-text"
       >
         <h2 className="text-[24pt] font-[Roboto] font-bold tracking-normal leading-[1.5] font-light tracking-tight mb-6 w-full">

@@ -1,15 +1,19 @@
 "use client"
 
-export default function HeroBanner() {
+export default function HeroBanner({imgPath, title}: {imgPath: string, title: string}) {
   return (
     <section
-      className="relative h-[50vh] min-h-[300px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-[url(/images/hero-bg-2.jpg)]"
+      className="relative h-[50vh] min-h-[300px] flex items-center justify-center bg-cover bg-center bg-no-repeat "
+      style={{ backgroundImage: `url(${imgPath})` }}
       
     >
-
       <div className="relative z-1 text-center text-white px-4">
-        <h1 className="text-6xl md:text-4xl lg:text-7xl font-light tracking-wider mb-8">
-          <span className="block text-mustard font-medium z-0">MB. MUEBLES Y OBJETOS</span>
+        <h1 className="text-6xl md:text-4xl lg:text-7xl font-light tracking-wider mb-8 font-[Impact"
+        style={{"fontFamily": "Impact, Arial"}}
+        >
+          <span className="block text-mustard font-medium z-0">
+            {title}
+          </span>
         </h1>
 
        

@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import whatsappLink from '@/lib/wpLink'
 
 export default function Navigation() {
 
@@ -25,7 +26,6 @@ export default function Navigation() {
   const [lastScrollPosition, setLastScrollPosition] = useState(0)
   const handleScroll = (): void => {
     const currentScrollPosition = window.scrollY || window.pageYOffset
-    // Hide navbar only when at the very top
     if (currentScrollPosition === 0) {
       setIsVisible(true)
     } else {
@@ -84,18 +84,18 @@ const DeskstopContent = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white/95 backdrop-blur-sm pl-8 pr-16">
             <DropdownMenuItem>
-              <Link href="/productos/muebles" className="hover:cursor-pointer hover:text-black text-gray-700">Muebles</Link>
+              <Link href="/productos" className="hover:cursor-pointer hover:text-black text-gray-700">Objetos</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/productos/objetos" className="hover:cursor-pointer hover:text-black text-gray-700">Objetos</Link>
+              <Link href="/productos/objetos" className="hover:cursor-pointer hover:text-black text-gray-700">Trabajos</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/productos/decoracion" className="hover:cursor-pointer hover:text-black text-gray-700">Decoración</Link>
+              <Link href="/productos/decoracion" className="hover:cursor-pointer hover:text-black text-gray-700">Muelbes</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Link href="/contacto" className="  transition-colors">
+        <Link href={whatsappLink} className="  transition-colors">
           Contacto
         </Link>
       </div>
@@ -115,26 +115,26 @@ const MobileContent = () => {
         <div className='w-full pt-2 text-xl'>
           <ul>
             <li className='pt-12 pl-6'>
-              <Link href="#">Inicio</Link>
+              <Link href="/">Inicio</Link>
             </li>
             <li className='pt-12 pl-6 text-xl'>
               <Accordion type="single" collapsible>
                 <AccordionItem className="text-xl" value="item-1">
                   <AccordionTrigger className="text-xl">Productos</AccordionTrigger>
                   <AccordionContent className="text-lg">
-                    Muebles
-                  </AccordionContent>
-                  <AccordionContent className="text-lg">
                     Objetos
                   </AccordionContent>
                   <AccordionContent className="text-lg">
-                    Decoraciones
+                    Trabajos
+                  </AccordionContent>
+                  <AccordionContent className="text-lg">
+                    Muebles
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </li>
             <li className='pt-12 pl-6'>
-              <Link href="#">Contacto</Link>
+              <Link href={whatsappLink}>Contacto</Link>
             </li>
           </ul>
         </div>

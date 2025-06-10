@@ -24,7 +24,7 @@ const carouselImages = [
 export function ProductCarousel() {
   
   return (
-    <Carousel className="py-12 px-8 md:p-none h-full w-full flex flex-col items-center justify-center relative z-0">
+    <Carousel className="py-12 md:p-none h-full w-full flex flex-col items-center justify-center relative z-0">
       <div className="relative w-full flex items-center justify-center">
       <CarouselPrevious
         variant={"none"}
