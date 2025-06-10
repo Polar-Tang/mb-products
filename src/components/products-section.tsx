@@ -37,13 +37,15 @@ export default function ProductsSection() {
             </h2>
             <div className="relative mb-4">
               <Image
+                height={80}
+                width={80}
                 src={section.image}
                 alt={section.title}
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
             <div className="flex items-center pb-14 pr-8 pl-8">
-             
+
               <li className="text-egg text-left leading-relaxed text-[12pt] font-normal leading-[1.56]">
                 {section.description}
               </li>
@@ -60,12 +62,14 @@ export default function ProductsSection() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="text-center"
-            >
+          >
             <h2 className="text-tangerine text-3xl font-semibold mb-6">
               {section.title}
             </h2>
             <div className="relative mb-6">
               <Image
+                height={80}
+                width={80}
                 src={section.image}
                 alt={section.title}
                 className="w-full h-80 object-cover rounded-lg"
@@ -75,7 +79,7 @@ export default function ProductsSection() {
               <li className="text-egg text-left leading-relaxed text-base leading-relaxed text-[12pt] font-normal leading-[1.56]">
                 {section.description}
               </li>
-             
+
             </div>
           </motion.div>
         ))}
