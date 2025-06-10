@@ -1,6 +1,6 @@
 import sql from "@/app/lib/sql";
 
-export async function GET({ params }: {params: {slug: string}}) {
+export async function GET({ params }: {params:  Promise<{slug: string}>}) {
   try {
     const { slug } = await params
     console.log("RThew slug ", slug)
