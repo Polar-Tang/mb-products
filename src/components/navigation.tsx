@@ -138,6 +138,10 @@ const DeskstopContent = () => {
 }
 
 const MobileContent = () => {
+  const pathname = usePathname()
+  const isActive = (href: string) => {
+    return pathname === href
+  }
   return (
     <Sheet>
       <SheetTrigger>
@@ -149,20 +153,45 @@ const MobileContent = () => {
         <div className='w-full pt-2 text-xl'>
           <ul>
             <li className='pt-12 pl-6'>
-              <Link href="/">Inicio</Link>
+              <Link href="/"
+                className={
+                  isActive('/')
+                    ? 'font-bold transition-colors'
+                    : 'hover:align-middle text-base font-normal'
+                }
+              >Inicio</Link>
             </li>
             <li className='pt-12 pl-6 text-xl'>
               <Accordion type="single" collapsible>
                 <AccordionItem className="text-xl" value="item-1">
-                  <AccordionTrigger className="text-xl">Productos</AccordionTrigger>
+                  <AccordionTrigger className="text-xl">
+                    <p className={
+                      isActive('/products')
+                        ? 'font-bold transition-colors'
+                        : 'hover:align-middle text-base font-normal'
+                    }>
+
+                      Productos
+                    </p>
+                  </AccordionTrigger>
+
                   <AccordionContent className="text-lg">
+                    <Link href='/products'>
+                    
                     Objetos
+                    </Link>
                   </AccordionContent>
                   <AccordionContent className="text-lg">
+                    <Link href='/products'>
+
                     Trabajos
+                    </Link>
                   </AccordionContent>
                   <AccordionContent className="text-lg">
+                    <Link href='/products'>
+
                     Muebles
+                    </Link>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
