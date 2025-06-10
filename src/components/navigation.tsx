@@ -156,8 +156,8 @@ const MobileContent = () => {
               <Link href="/"
                 className={
                   isActive('/')
-                    ? 'font-bold transition-colors'
-                    : 'hover:align-middle text-base font-normal'
+                    ? 'font-bold '
+                    : ''
                 }
               >Inicio</Link>
             </li>
@@ -166,9 +166,9 @@ const MobileContent = () => {
                 <AccordionItem className="text-xl" value="item-1">
                   <AccordionTrigger className="text-xl">
                     <p className={
-                      isActive('/products')
-                        ? 'font-bold transition-colors'
-                        : 'hover:align-middle text-base font-normal'
+                      isActive('/productos')
+                        ? 'font-bold '
+                        : ''
                     }>
 
                       Productos
@@ -176,21 +176,21 @@ const MobileContent = () => {
                   </AccordionTrigger>
 
                   <AccordionContent className="text-lg">
-                    <Link href='/products'>
-                    
-                    Objetos
+                    <Link href='/productos'>
+
+                      Objetos
                     </Link>
                   </AccordionContent>
                   <AccordionContent className="text-lg">
-                    <Link href='/products'>
+                    <Link href='/productos'>
 
-                    Trabajos
+                      Trabajos
                     </Link>
                   </AccordionContent>
                   <AccordionContent className="text-lg">
-                    <Link href='/products'>
+                    <Link href='/productos'>
 
-                    Muebles
+                      Muebles
                     </Link>
                   </AccordionContent>
                 </AccordionItem>
